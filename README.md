@@ -9,6 +9,10 @@ Sample app for how to use the Bitmovin Web SDK in Universal Windows Platform (UW
 5. Run/debug the sample app on your `Local Machine`
 
 ## Using the Sample App on Xbox
+1. Put your Xbox One into development mode. This guide was useful: https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/devkit-activation
+2. Follow the steps 1-4 above for "Using the Sample App on Windows 10"
+3. Run/debug on your `Remote Machine`. Follow this guide to see how to deploy to your Xbox https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/development-environment-setup
+
 
 ### Notes for developing your own app
  - Make sure to enable `file_protocol` in the `tweaks` section of your config.
