@@ -3,36 +3,43 @@
 };
 
 function setupPlayer() {
-    var conf = {
-        key: "<YOUR_PLAYER_KEY>",
-        source: {
-            // AVC Stream
-            //dash: "https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
-            // HEVC Stream
-            dash : "https://bitmovin-a.akamaihd.net/content/multi-codec/hevc/stream.mpd"
-        },
+
+    const config = {
+        key: '<YOUR_PLAYER_KEY>',
         playback: {
             autoplay: true
         },
-        tweaks: {
-            max_buffer_level: 30,
-            file_protocol: true
+        ui: false,
+        logs: {
+            level: 'debug'
         }
     };
 
-    window.player = bitmovin.player("player");
-    player.setup(conf).then(function (value) {
-        // Success
-        console.log("Successfully created bitmovin player instance");
-    }, function (reason) {
-        // Error!
-        console.log("Error while creating bitmovin player instance");
-    });
-    player.addEventHandler(bitmovin.player.EVENT.ON_WARNING, function (data) {
+    var container = document.getElementById('player');
+    var player = new bitmovin.player.Player(container, config);
+
+    var source = {
+        dash: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
+        hls: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
+        progressive:
+            'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
+        poster: 'https://bitmovin-a.akamaihd.net/content/MI201109210084_1/poster.jpg'
+    };
+
+    player.load(source).then(
+        function (player) {
+            console.log('Successfully created Bitmovin Player instance');
+        },
+        function (reason) {
+            console.log('Error while creating Bitmovin Player instance');
+        }
+    );
+
+    player.on('warning', function (data) {
         console.log("On Warning: " + JSON.stringify(data));
     });
 
-    player.addEventHandler(bitmovin.player.EVENT.ON_ERROR, function (data) {
+    player.on('error', function (data) {
         console.log("On Error: " + JSON.stringify(data));
     });
 }

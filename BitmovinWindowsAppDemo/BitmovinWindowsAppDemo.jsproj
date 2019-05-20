@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|AnyCPU">
@@ -48,8 +48,8 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
   <PropertyGroup>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>BitmovinWindowsAppDemo_TemporaryKey.pfx</PackageCertificateKeyFile>
@@ -131,8 +131,6 @@
     <Content Include="js\bitmovin-player\bitmovinplayer-native.swf" />
     <Content Include="js\bitmovin-player\bitmovinplayer-ui.css" />
     <Content Include="js\bitmovin-player\bitmovinplayer-ui.js" />
-    <Content Include="js\bitmovin-player\bitmovinplayer-vr.js" />
-    <Content Include="js\bitmovin-player\bitmovinplayer-vr.prod.js" />
     <Content Include="js\bitmovin-player\bitmovinplayer.js" />
     <Content Include="js\bitmovin-player\bitmovinplayer.prod.js" />
     <Content Include="js\bitmovin-player\bitmovinplayer.swf" />
